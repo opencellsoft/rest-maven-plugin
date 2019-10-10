@@ -64,7 +64,7 @@
     <maven-plugin-tools-annotations.version>3.4</maven-plugin-tools-annotations.version>
     <maven-plugin-tools-api.version>3.4</maven-plugin-tools-api.version>
     <maven-plugin-testing-harness.version>3.3.0</maven-plugin-testing-harness.version>
-    <maven-plugin-plugin.version>3.4</maven-plugin-plugin.version>
+    <maven-plugin-plugin.version>3.6.0</maven-plugin-plugin.version>
     <maven-checkstyle-plugin.version>2.16</maven-checkstyle-plugin.version>
     <maven-invoker-plugin.version>2.0.0</maven-invoker-plugin.version>
     <maven-gpg-plugin.version>1.5</maven-gpg-plugin.version>
@@ -83,6 +83,7 @@
     <plexus-io.version>2.6.1</plexus-io.version>
     <plexus-component-annotations.version>1.6</plexus-component-annotations.version>
     <plexus-component-metadata.version>1.6</plexus-component-metadata.version>
+    <jackson.version>2.10.0</jackson.version>
   </properties>
 
   <dependencies>
@@ -240,7 +241,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.9</version>
+      <version>${jackson.version}</version>
     </dependency>
 
     <dependency>
@@ -252,12 +253,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-core</artifactId>
-      <version>2.9.9</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.dataformat</groupId>
       <artifactId>jackson-dataformat-xml</artifactId>
-      <version>2.9.9</version>
+      <version>${jackson.version}</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jgit</groupId>
