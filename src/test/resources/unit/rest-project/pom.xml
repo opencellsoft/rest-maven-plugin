@@ -1,0 +1,73 @@
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.opencellsoft.plugins</groupId>
+    <artifactId>rest-maven-plugin-test</artifactId>
+    <version>0.1.6</version>
+    <packaging>jar</packaging>
+
+    <name>REST Request Maven Plugin Test</name>
+
+    <properties>
+        <rest-maven-plugin.version>${project.version}</rest-maven-plugin.version>
+        <opencell.version>8.0.0-SNAPSHOT</opencell.version>
+        <java.version>8</java.version>
+        <!-- the configured directory for externals lib used in opencell-->
+        <output.directory>/tmp/libs</output.directory>
+        <!--opencell.username:opencell.password encoded with base64 -->
+        <rest-maven-plugin.version>0.1.4</rest-maven-plugin.version>
+
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.opencellsoft.plugins</groupId>
+            <artifactId>rest-maven-plugin</artifactId>
+            <version>${rest-maven-plugin.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.opencellsoft.plugins</groupId>
+                <artifactId>rest-maven-plugin</artifactId>
+                <version>${rest-maven-plugin.version}</version>
+                <configuration>
+                    <endpoint>http://localhost:8080</endpoint>
+                    <resource>/opencell/api/rest/scriptInstance/createOrUpdate</resource>
+                    <method>POST</method>
+                    <saveResponse>true</saveResponse>
+                    <outputDir>/target/scripts/</outputDir>
+                    <inputDir>src/main/java/com/opencellsoft/utils</inputDir>
+                    <javaFile>src/main/java/com/opencellsoft/utils/ErrorInfo.java</javaFile>
+                    <headers>
+                        <Authorization>Basic b3BlbmNlbGwuYWRtaW46b3BlbmNlbGwuYWRtaW4=</Authorization>
+                        <Accept>*/*</Accept>
+                    </headers>
+                    <requestType>
+                        <type>application</type>
+                        <subtype>json</subtype>
+                    </requestType>
+                    <fileset>
+                        <directory>C:\Users\mohammed\IdeaProjects\rest-maven-plugin\target\scripts</directory>
+                        <includes>
+                            <include>*.json</include>
+                        </includes>
+                    </fileset>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.opencellsoft.plugins</groupId>
+                        <artifactId>rest-maven-plugin</artifactId>
+                        <version>${project.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+</project>
