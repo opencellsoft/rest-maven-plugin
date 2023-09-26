@@ -76,7 +76,7 @@
 
     <!-- Plexus component versions -->
     <plexus-compiler-api.version>2.5</plexus-compiler-api.version>
-    <plexus-utils.version>3.0.22</plexus-utils.version>
+    <plexus-utils.version>3.0.24</plexus-utils.version>
     <plexus-build-api.version>0.0.7</plexus-build-api.version>
     <plexus.version>3.0.22</plexus.version>
     <plexus-resources.version>1.0.1</plexus-resources.version>
